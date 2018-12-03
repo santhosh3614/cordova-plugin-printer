@@ -360,7 +360,7 @@
                                                                 ofType:nil];
         NSURL* baseURL = nil;
         if (wwwFilePath != nil) {
-          baseURL = [NSURL fileURLWithPath:wwwFilePath]
+          baseURL = [NSURL fileURLWithPath:wwwFilePath];
         }
 
         [page loadHTMLString:content baseURL:baseURL];
