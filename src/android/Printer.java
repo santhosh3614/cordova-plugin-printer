@@ -199,8 +199,10 @@ public class Printer extends CordovaPlugin {
             view.loadUrl(content);
         } else {
             String baseURL = webView.getUrl();
-            baseURL        = baseURL.substring(0, baseURL.lastIndexOf('/') + 1);
-
+	    if(baseURL!=null){
+		baseURL = baseURL.substring(0, baseURL.lastIndexOf('/') + 1);
+	    }
+            
             // Set base URI to the assets/www folder
             view.loadDataWithBaseURL(
                     baseURL, content, "text/html", "UTF-8", null);
