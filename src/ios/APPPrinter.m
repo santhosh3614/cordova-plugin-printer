@@ -358,8 +358,10 @@
     else {
         NSString* wwwFilePath = [[NSBundle mainBundle] pathForResource:@"www"
                                                                 ofType:nil];
-        NSURL* baseURL        = [NSURL fileURLWithPath:wwwFilePath];
-
+        NSURL* baseURL = nil;
+        if (wwwFilePath != nil) {
+          baseURL = [NSURL fileURLWithPath:wwwFilePath]
+        }
 
         [page loadHTMLString:content baseURL:baseURL];
     }
